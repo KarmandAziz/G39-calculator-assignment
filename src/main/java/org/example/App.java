@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class App {
 
-    public static final String Intro = " CALCULATOR";
+    public static final String INTRO = " CALCULATOR";
 
     public static double calculate(double num1, double num2, String operator) {
         double result = 0;
@@ -28,7 +28,7 @@ public class App {
                 }
                 break;
             default:
-                System.out.println("operator " + operator + " is either not supported");
+                System.out.println("operator " + operator + " is not supported");
         }
         return result;
     }
@@ -42,34 +42,36 @@ public class App {
            of the assignment going forward.
          */
 
+        calculatorAssignment();
 
-        System.out.println(Intro);
 
-        Scanner input1 = new Scanner(System.in);
-        Scanner input2 = new Scanner(System.in);
-        Scanner inputOperator = new Scanner(System.in);
-        Scanner opQuit = new Scanner (System.in);
-        boolean running = true;
 
-        while (running) {
-            System.out.println("Enter a number");
-            double num1 = Double.parseDouble(input1.nextLine());
-            System.out.println("Enter a number");
-            double num2 = Double.parseDouble(input2.nextLine());
-            System.out.println("Enter a operator");
-            String operator = inputOperator.nextLine();
-            double result = calculate(num1, num2, operator);
-            System.out.println(result);
-            System.out.println("Do you wish to continue? Input: Yes / No");
-            String stopReset = opQuit.next();
-            if (stopReset.equals("No"))
-                System.out.println("Goodbye!");
-            running = stopReset.equals("Yes");
-        }
 
 
         }
+public static void calculatorAssignment(){
+    System.out.println(INTRO);
 
+    Scanner scanner = new Scanner(System.in);
+    Scanner quitProgram = new Scanner (System.in);
+    boolean running = true;
+
+    while (running) {
+        System.out.println("Enter a number");
+        double num1 = Double.parseDouble(scanner.nextLine());
+        System.out.println("Enter a number");
+        double num2 = Double.parseDouble(scanner.nextLine());
+        System.out.println("Enter a operator");
+        String operator = scanner.nextLine();
+        double result = calculate(num1, num2, operator);
+        System.out.println(result);
+        System.out.println("Do you wish to continue? Yes / No");
+        String stopReset = quitProgram.next();
+        if (stopReset.equals("No"))
+            System.out.println("Goodbye!");
+        running = stopReset.equals("Yes");
+    }
+}
 
 
 
