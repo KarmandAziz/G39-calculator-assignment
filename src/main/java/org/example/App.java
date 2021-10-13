@@ -53,23 +53,23 @@ public static void calculatorAssignment(){
     System.out.println(INTRO);
 
     Scanner scanner = new Scanner(System.in);
-    Scanner quitProgram = new Scanner (System.in);
+    Scanner resetProgram = new Scanner (System.in);
     boolean running = true;
 
     while (running) {
         System.out.println("Enter a number");
         double num1 = Double.parseDouble(scanner.nextLine());
-        System.out.println("Enter a number");
-        double num2 = Double.parseDouble(scanner.nextLine());
         System.out.println("Enter a operator");
         String operator = scanner.nextLine();
+        System.out.println("Enter a number");
+        double num2 = Double.parseDouble(scanner.nextLine());
         double result = calculate(num1, num2, operator);
         System.out.println(result);
         System.out.println("Do you wish to continue? Yes / No");
-        String stopReset = quitProgram.next();
-        if (stopReset.equals("No"))
+        String reset = resetProgram.next();
+        if (reset.equals("No"))
             System.out.println("Goodbye!");
-        running = stopReset.equals("Yes");
+        running = reset.equals("Yes");
     }
 }
 
